@@ -21,6 +21,7 @@ periods={'1mo':'1mo','3mo':'3mo','6mo':'6mo','1y':'1y','max':'max'}
 
 
 app =  dash.Dash(__name__,external_stylesheets = [dbc.themes.BOOTSTRAP])
+server = app.server
 
 app.layout = dbc.Container([
     
