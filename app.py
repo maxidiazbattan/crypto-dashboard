@@ -1,5 +1,4 @@
 #Importing the libraries.
-from jupyter_dash import JupyterDash
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -14,7 +13,6 @@ from datetime import date
 from urllib.request import urlretrieve
 
 df = yf.download(tickers = "BTC-USD ETH-USD BNB-USD", period = "1mo", interval = "1h")
-#df_mkt = yf.download(tickers = "BTC-USD ETH-USD BNB-USD", period = "1y", interval = "1d")
 df = df['High'].reset_index().rename(columns={'index':'Date'}).sort_values(by='Date', ascending=False)
 df = df.dropna()
 
@@ -22,7 +20,7 @@ assets={'BTC-USD':'BTC-USD','ETH-USD':'ETH-USD','BNB-USD':'BNB-USD'}
 periods={'1mo':'1mo','3mo':'3mo','6mo':'6mo','1y':'1y','max':'max'}
 
 
-app = JupyterDash(__name__,external_stylesheets = [dbc.themes.BOOTSTRAP])
+app =  dash.Dash(__name__,external_stylesheets = [dbc.themes.BOOTSTRAP])
 
 app.layout = dbc.Container([
     
@@ -368,7 +366,5 @@ def build_graph(ticker, periods):
     
     return fig7  
 
-
-
 if __name__ =='__main__':
-    app.run_server(host='127.0.0.1',port=8900, use_reloader=False)
+    app.run_server(host='127.0.0.1',port=8500, use_reloader=False)
