@@ -11,6 +11,7 @@ from dash.dependencies import Input, Output
 import pandas as pd
 from datetime import date
 from urllib.request import urlretrieve
+import yfinance as yf
 
 df = yf.download(tickers = "BTC-USD ETH-USD BNB-USD", period = "1mo", interval = "1h")
 df = df['High'].reset_index().rename(columns={'index':'Date'}).sort_values(by='Date', ascending=False)
