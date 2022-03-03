@@ -1,7 +1,7 @@
 body {
     font-family: "Lato", sans-serif;
     margin: 0;
-    background-color: #CCCCFF;
+    background-color: #6666FF;
 }
 
 
@@ -25,25 +25,24 @@ body {
 
 .title-card {
     background-color: #CCCCFF;
-    background: rgba(76, 175, 80, 0.2);
+    background: rgba(76, 175, 80, 0.3);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.40);
 }
+
 
 .dropdown-card {
     background-color: #CCCCFF;
-    background: rgba(76, 175, 80, 0.2);
+    background: rgba(76, 175, 80, 0.3);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.40);
 }
-
-
 
 
 .indicators-card {
     height: 200px;
     font-size: 15px;
     background-color: #CCCCFF;
-    background: rgba(76, 175, 80, 0.2);
-    margin-bottom: 24px;
+    background: rgba(76, 175, 80, 0.3);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.40);
+    margin-bottom: 24px;
 }
 
