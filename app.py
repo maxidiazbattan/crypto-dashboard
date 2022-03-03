@@ -9,18 +9,23 @@ import plotly.express as px
 from dash.dependencies import Input, Output
 
 import pandas as pd
-import yfinance as yf
 
 
-def data_load():
+
+#def data_load():
     
-    df = yf.download(tickers = "BTC-USD ETH-USD BNB-USD", period = "1mo", interval = "1h")
-    df = df['High'].reset_index().rename(columns={'index':'Date'}).sort_values(by='Date', ascending=False)
-    df=df.dropna()
+#    df = yf.download(tickers = "BTC-USD ETH-USD BNB-USD", period = "1mo", interval = "1h")
+#    df = df['High'].reset_index().rename(columns={'index':'Date'}).sort_values(by='Date', ascending=False)
+#    df=df.dropna()
 
-    return df
+#    return df
 
-df = data_load()
+#df = data_load()
+
+
+df = pd.read_csv('/content/cards_tickers.csv', header=0, index_col=0)
+df = df.reset_index()
+
 
 assets={'BTC-USD':'BTC-USD','ETH-USD':'ETH-USD','BNB-USD':'BNB-USD'}
 periods={'1mo':'1mo','3mo':'3mo','6mo':'6mo','1y':'1y','max':'max'}
@@ -356,14 +361,22 @@ def update_graph(timer):
 
 def build_graph(ticker, periods):
 
-    df_mkt = yf.download(tickers = ticker, period = periods, interval = "1h")
+    #df_mkt = yf.download(tickers = ticker, period = periods, interval = "1h")
     
-    df_mkt = df_mkt.dropna()
-
+    #df_mkt = df_mkt.dropna()
+    
+    if periods == '1mo':
+        df_mkt=pd.read_csv('/content/periods_1mo.csv', header=[0,1], index_col=0)
+    elif periods == '3mo':
+        df_mkt=pd.read_csv('/content/periods_3mo.csv', header=[0,1], index_col=0)
+    elif periods == '6mo':
+        df_mkt=pd.read_csv('/content/periods_6mo.csv', header=[0,1], index_col=0)
+    else:
+        df_mkt=pd.read_csv('/content/periods_1y.csv', header=[0,1], index_col=0)
 
     fig7 = go.Figure(data=[go.Candlestick(x=df_mkt.index,
-                    open=df_mkt['Open'], high=df_mkt['High'],
-                    low=df_mkt['Low'], close=df_mkt['Close'])
+                    open=df_mkt['Open'][ticker], high=df_mkt['High'][ticker],
+                    low=df_mkt['Low'][ticker], close=df_mkt['Close'][ticker])
                     ])
 
     fig7.update_layout(title=f'{ticker} {periods}',
