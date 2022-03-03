@@ -19,10 +19,8 @@ In the following link you can see it, https://cryptodashboardwdash.herokuapp.com
 
 ## Deploy to Heroku
 1. Install Heroku CLI: 
-
-For WSL users, run `sudo curl https://cli-assets.heroku.com/install.sh | sh`. 
-
-For Mac users, run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` if you don't have Homebrew installed, then `brew tap heroku/brew && brew install heroku`. 
+- For WSL users, run `sudo curl https://cli-assets.heroku.com/install.sh | sh`. 
+- For Mac users, run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` if you don't have Homebrew installed, then `brew tap heroku/brew && brew install heroku`. 
 
 This could take a few minutes. In the meantime...
 
