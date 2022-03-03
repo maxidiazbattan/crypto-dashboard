@@ -5,4 +5,3 @@ Flask==1.1.2
 Flask-Compress==1.5.0
 gunicorn==20.0.4
 dash_bootstrap_components
-yfinance==0.1.70
