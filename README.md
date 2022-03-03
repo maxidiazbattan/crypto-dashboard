@@ -27,16 +27,18 @@ For Mac users, run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com
 This could take a few minutes. In the meantime...
 
 2. Create a free account on Heroku https://signup.heroku.com/login
-3. Create a `requirements.txt` file with all your non-standard dependencies (based on any libraries you are importing), separated by a newline. In our case, they are `Flask` w/ a capital F, `requests`, and `python-dotenv`. Note that libraries like `os` are standard imports, so they don't need to be included.
+3. Create a `requirements.txt` file with all your non-standard dependencies (based on any libraries you are importing), separated by a newline. In our case, they are `Flask` w/ a capital F. Note that libraries like `os` are standard imports, so they don't need to be included.
 4. Create a `Procfile`, which has the command that Heroku will use to run your app: `web: python app.py` (see documentation https://devcenter.heroku.com/articles/getting-started-with-python#define-a-procfile)
 5. Add + commit all changed files with git
 6. Log in to Heroku: `heroku login -i`
 5. Create a Heroku app: `heroku create`. This will create a new URL and associated host for you.
-6. Push your code to Heroku: `git push heroku main`. This actually pushes your code to Heroku's remote repository.
-
-You may get an error at this point relating to a buildpack. That means that Heroku can't figure out on its own what primary language your code is written in. You should be able to resolve this with `heroku buildpacks:set heroku/python`.
-
+6. Push your code to Heroku: `git push heroku main`. This actually pushes your code to Heroku's remote repository. You may get an error at this point relating to a buildpack. That means that Heroku can't figure out on its own what primary language your code is written in. You should be able to resolve this with `heroku buildpacks:set heroku/python`.
 7. Open your app with your new URL: `heroku open`. Click the link to open if it doesn't open on its own. It shouldn't work, because it doeesn't have any environment variables (remember, your `.env` file is not in your git repository!)
 8. Go to https://dashboard.heroku.com/apps and click your App, then go to Settings, and click "Reveal Config Vars"
 9. Run `heroku open` or refresh the URL if you have it open. 
 10. That's it, your app it's deployed, congrats!
+
+## Author
+
+* **Maximiliano Diaz Battan** 
+
