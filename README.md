@@ -11,7 +11,7 @@ In the following link you can see it, https://cryptodashboardwdash.herokuapp.com
 2. In your terminal, in your home directory, clone the repo
 3. `cd` into the repository that is created and you should see all the files now.
 4. Then, connect this cloned repo to your new personal repo made in Step 1: `git remote set-url origin https://www.github.com/{your-username}/crypto-dashboard.git` (be sure to change your username and remove the curly braces)
-5. Run `git push origin main` to push the local repo to remote. You should now see this same code in your personal `covid-dashboard` repo.
+5. Run `git push origin main` to push the local repo to remote. You should now see this same code in your personal `crypto-dashboard` repo.
 
 ## Run Application
 1. Run command in terminal `python app.py` (or your app name)
