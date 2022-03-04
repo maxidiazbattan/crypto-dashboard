@@ -28,12 +28,13 @@ df = df.reset_index()
 
 
 assets={'BTC-USD':'BTC-USD','ETH-USD':'ETH-USD','BNB-USD':'BNB-USD'}
-periods={'1mo':'1mo','3mo':'3mo','6mo':'6mo','1y':'1y','max':'max'}
+periods={'1mo':'1mo','3mo':'3mo','6mo':'6mo','1y':'1y'}
 
 
 app =  dash.Dash(__name__,external_stylesheets = [dbc.themes.BOOTSTRAP],
-                          meta_tags=[{'name': 'viewport',
-                                      'content': 'width=device-width, initial-scale=1.0'}])
+                          #meta_tags=[{'name': 'viewport',
+                          #            'content': 'width=device-width, initial-scale=1.0'}]
+                )
 
 server = app.server
 
