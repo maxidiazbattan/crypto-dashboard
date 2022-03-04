@@ -43,7 +43,7 @@ app.layout = dbc.Container([
              dbc.Col([
                       dbc.Card([
                                 dbc.CardBody([html.H2("Crypto Dashboard 📈", className='header header-title text-center') ]),
-                                ], style={'borderRadius': '15px'}, className='title-card'),], width={'size':4, 'offset':0}),
+                                ], style={'borderRadius': '10px'}, className='title-card'),], width={'size':4, 'offset':0}),
 
             dbc.Col([
                       dbc.Card([
@@ -53,9 +53,9 @@ app.layout = dbc.Container([
                          options=[{"label": j, "value": i} for i, j in assets.items()],
                          value="BTC-USD", 
                          clearable=False,
-                         style= {'borderRadius': '15px'}, className="m-1",
+                         style= {'borderRadius': '10px'}, className="m-1",
                         ),
-                     ]),], style={'borderRadius': '15px'}, className='dropdown-card'),], width={'size':4, 'offset':0}),
+                     ]),], style={'borderRadius': '10px'}, className='dropdown-card'),], width={'size':4, 'offset':0}),
     
              dbc.Col([
                       dbc.Card([
@@ -65,9 +65,9 @@ app.layout = dbc.Container([
                          options=[{"label": j, "value": i} for i, j in periods.items()],
                          value="1mo", 
                          clearable=False,
-                         style= {'borderRadius': '15px'}, className="m-1",
+                         style= {'borderRadius': '10px'}, className="m-1",
                         ),
-                     ]),], style={'borderRadius': '15px'}, className='dropdown-card'),], width={'size':4, 'offset':0}),
+                     ]),], style={'borderRadius': '10px'}, className='dropdown-card'),], width={'size':4, 'offset':0}),
         ], ),
 
 
@@ -96,7 +96,7 @@ app.layout = dbc.Container([
                                                       ]),
                                              ]),
                            
-                               ], style={'borderRadius': '15px'}, className="indicators-card m-1")
+                               ], style={'borderRadius': '10px'}, className="indicators-card m-1")
                         ], width={'size':4, 'offset':0}),
 
             dbc.Col([
@@ -122,7 +122,7 @@ app.layout = dbc.Container([
                                                       ]),
                                              ]),
                            
-                               ], style={'borderRadius': '15px'}, className="indicators-card m-1")
+                               ], style={'borderRadius': '10px'}, className="indicators-card m-1")
                         ], width={'size':4, 'offset':0}),
              
              dbc.Col([
@@ -148,7 +148,7 @@ app.layout = dbc.Container([
                                                       ]),
                                              ]),
                            
-                               ], style={'borderRadius': '15px'}, className="indicators-card m-1 ml-0")
+                               ], style={'borderRadius': '10px'}, className="indicators-card m-1 ml-0")
                         ], width={'size':4, 'offset':0}),
         
         ], ),
@@ -160,7 +160,7 @@ app.layout = dbc.Container([
                                 dbc.CardBody([
                                               dcc.Graph(id='candlestick', figure={}),
                                             ]),
-                                ], style= {'borderRadius': '15px'}, className="dropdown-card m-1"),
+                                ], style= {'borderRadius': '10px'}, className="dropdown-card m-1"),
                      ], width={'size':12, 'offset':0})
              
             ]),
