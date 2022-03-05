@@ -43,32 +43,32 @@ app.layout = dbc.Container([
     dbc.Row([
              dbc.Col([
                       dbc.Card([
-                                dbc.CardBody([html.H2("Crypto Dashboard 📈", className='header header-title text-center') ]),
-                                ], style={'borderRadius': '10px'}, className='title-card'),], width={'size':4, 'offset':0}),
+                                dbc.CardBody([html.H2("Crypto Dashboard 📈", className='header header-title text-center text-white') ]),
+                                ], style={'borderRadius': '10px'}, className='title-card mt-1'),], width={'size':4, 'offset':0}),
 
             dbc.Col([
                       dbc.Card([
                                 dbc.CardBody([
-                        html.H5("Choose an asset", className='header-title text-center'),
+                        html.H5("Choose an asset", className='header-title text-center text-white'),
                       dcc.Dropdown(id="assets-dropdown",
                          options=[{"label": j, "value": i} for i, j in assets.items()],
                          value="BTC-USD", 
                          clearable=False,
                          style= {'borderRadius': '10px'}, className="m-1",
                         ),
-                     ]),], style={'borderRadius': '10px'}, className='dropdown-card'),], width={'size':4, 'offset':0}),
+                     ]),], style={'borderRadius': '10px'}, className='dropdown-card mt-1'),], width={'size':4, 'offset':0}),
     
              dbc.Col([
                       dbc.Card([
                                 dbc.CardBody([
-                        html.H5("Choose a period", className='header-title text-center'),
+                        html.H5("Choose a period", className='header-title text-center text-white'),
                       dcc.Dropdown(id="period-dropdown",
                          options=[{"label": j, "value": i} for i, j in periods.items()],
                          value="1mo", 
                          clearable=False,
                          style= {'borderRadius': '10px'}, className="m-1",
                         ),
-                     ]),], style={'borderRadius': '10px'}, className='dropdown-card'),], width={'size':4, 'offset':0}),
+                     ]),], style={'borderRadius': '10px'}, className='dropdown-card mt-1'),], width={'size':4, 'offset':0}),
         ], ),
 
 
@@ -80,7 +80,7 @@ app.layout = dbc.Container([
                                               dbc.Row([
                                                        dbc.Col([dbc.CardImg(src="/assets/bitcoin.png",
                                                                             top=True,
-                                                                            style={"width": 60, 'height': 70},)
+                                                                            style={"width": 50, 'height': 50},)
                                                                ]),
 
                                                         dbc.Col([html.P("CHANGE (1m)", className="mt-3 ml-1")]),
@@ -106,7 +106,7 @@ app.layout = dbc.Container([
                                               dbc.Row([
                                                        dbc.Col([dbc.CardImg(src="/assets/ethereum.png",
                                                                             top=True,
-                                                                            style={"width": 60, 'height': 70},)
+                                                                            style={"width": 50, 'height': 50},)
                                                                ]),
 
                                                         dbc.Col([html.P("CHANGE (1m)", className="mt-3 ml-1")]),
@@ -132,7 +132,7 @@ app.layout = dbc.Container([
                                               dbc.Row([
                                                        dbc.Col([dbc.CardImg(src="/assets/bnb.png",
                                                                             top=True,
-                                                                            style={"width": 60, 'height': 70},)
+                                                                            style={"width": 50, 'height': 50},)
                                                                ]),
 
                                                         dbc.Col([html.P("CHANGE (1m)", className="mt-3 ml-1")]),
@@ -161,7 +161,7 @@ app.layout = dbc.Container([
                                 dbc.CardBody([
                                               dcc.Graph(id='candlestick', figure={}),
                                             ]),
-                                ], style= {'borderRadius': '10px'}, className="dropdown-card m-1"),
+                                ], style= {'borderRadius': '10px'}, className="candlestick-card m-1"),
                      ], width={'size':12, 'offset':0})
              
             ]),
@@ -377,7 +377,7 @@ def build_graph(ticker, periods):
                     ])
 
     fig7.update_layout(title=f'{ticker} {periods}',
-                       font_color="black",
+                       font_color="white",
                        #xaxis_rangeslider_visible=False,
                        paper_bgcolor='rgba(0,0,0,0)',
                        plot_bgcolor='rgba(0,0,0,0)')
