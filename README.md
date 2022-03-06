@@ -3,13 +3,6 @@
 In this repro I have created a dashboard with Dash, a Python framework that allows you to create web apps in pure Python, without the need to use JavaScript, HTML or CSS, for more info you can check the documentation here, https://dash.plotly.com/. 
 In the following link you can see it, https://cryptodashboardwdash.herokuapp.com/ (it takes a bit to load the first time because it's dorment at Heroku Servers). I hope you like it, and the instructions to use it are below.
 
-# Built With
-
-* [Python](https://docs.python.org/3/) - Programming language
-* [Pandas](https://pandas.pydata.org/docs/) - Data manipulation python library
-* [Plotly](https://plotly.com/python/) - Graphing python library
-* [Dash](https://dash.plotly.com/) - Dashboard python library
-
 
 # Heroku Deployment
 
@@ -42,6 +35,15 @@ This could take a few minutes. In the meantime...
 8. Go to https://dashboard.heroku.com/apps and click your App, then go to Settings, and click "Reveal Config Vars"
 9. Run `heroku open` or refresh the URL if you have it open. 
 10. That's it, your app it's deployed, congrats!
+
+
+# Built With
+
+* [Python](https://docs.python.org/3/) - Programming language
+* [Pandas](https://pandas.pydata.org/docs/) - Data manipulation python library
+* [Plotly](https://plotly.com/python/) - Graphing python library
+* [Dash](https://dash.plotly.com/) - Dashboard python library
+
 
 # Author
 
