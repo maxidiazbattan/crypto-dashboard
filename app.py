@@ -86,7 +86,7 @@ app.layout = dbc.Container([
                                                                             style={"width": 50, 'height': 50},)
                                                                ]),
 
-                                                        dbc.Col([html.P("CHANGE (1m)", className="mt-3 ml-1")]),
+                                                        dbc.Col([html.P("CHANGE (1d)", className="mt-3 ml-1")]),
 
                                                         dbc.Col([dcc.Graph(id='indicator-graph-1', figure={},
                                                                            config={'displayModeBar':False}, className="mt-2")
@@ -112,7 +112,7 @@ app.layout = dbc.Container([
                                                                             style={"width": 50, 'height': 50},)
                                                                ]),
 
-                                                        dbc.Col([html.P("CHANGE (1m)", className="mt-3 ml-1")]),
+                                                        dbc.Col([html.P("CHANGE (1d)", className="mt-3 ml-1")]),
 
                                                         dbc.Col([dcc.Graph(id='indicator-graph-2', figure={},
                                                                            config={'displayModeBar':False}, className="mt-2")
@@ -139,7 +139,7 @@ app.layout = dbc.Container([
                                                                             style={"width": 50, 'height': 50},)
                                                                ]),
 
-                                                        dbc.Col([html.P("CHANGE (1m)", className="mt-3 ml-1")]),
+                                                        dbc.Col([html.P("CHANGE (1d)", className="mt-3 ml-1")]),
 
                                                         dbc.Col([dcc.Graph(id='indicator-graph-3', figure={},
                                                                            config={'displayModeBar':False}, className="mt-2")
