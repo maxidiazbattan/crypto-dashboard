@@ -396,6 +396,7 @@ def build_graph(ticker, periods):
 
     fig7.update_layout(title=f'{ticker} {periods}',
                        #xaxis_rangeslider_visible=False,
+                       font_color="white",
                        paper_bgcolor='rgba(0,0,0,0)',
                        plot_bgcolor='rgba(0,0,0,0)')
     
