@@ -1,3 +1,6 @@
+![crypto_dash.jpg](https://github.com/maxidiazbattan/crypto-dashboard/blob/main/assets/crypto%20dash.jpg?raw=true)
+
+
 # Crypto-dashboard
 
 In this repro I have created a dashboard with Dash, a Python framework that allows you to create web apps in pure Python, without the need to use JavaScript, HTML or CSS, for more info you can check the documentation here, https://dash.plotly.com/. 
