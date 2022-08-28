@@ -3,9 +3,9 @@
 
 # Crypto-dashboard
 
-In this repro I have created a dashboard with Dash, a Python framework that allows you to create web apps in pure Python, for more info you can check the documentation here, https://dash.plotly.com/. 
+In this repro I have created a dashboard with Dash, a Python framework that allows you to create web apps in pure Python, for more info you can check the documentation here, https://dash.plotly.com/.
 For this project I used Defi and Yahoo Finance Api's, to obtain the data, I had to use Defi because Yahoo allowed me to make very few requests, so I had to change my strategy when assembling the graphs. For the three area plots I used Defi, and for the candlestick Yahoo Finance, I had to store the data in dataframes and export them to avoid problems with the requests. Data cleaning was done with pandas.
-In the following link you can see it, https://cryptodashboardwdash.herokuapp.com/ (it takes a bit to load the first time because it's dorment at Heroku Servers). I hope you like it, and the instructions to use it are below.
+In the following link you can see final result, https://cryptodashboardwdash.herokuapp.com/ (it takes a bit to load the first time because it's dorment at Heroku Servers). I hope you like it, and the instructions to use it are below.
 
 
 # Heroku Deployment
