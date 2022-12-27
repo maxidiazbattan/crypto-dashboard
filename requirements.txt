@@ -7,4 +7,5 @@ Flask-Compress==1.5.0
 gunicorn==20.0.4
 dash_bootstrap_components
 itsdangerous==2.0.1
+werkzeug==2.0.3
 defi
