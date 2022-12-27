@@ -12,8 +12,8 @@ In this repo, I have created a dashboard with Dash, a Python framework that allo
 1. On https://github.com/new, create a new repository  
 2. In your terminal, in your home directory, clone the repo
 3. `cd` into the repository that is created and you should see all the files now.
-4. Then, connect this cloned repo to your new personal repo made in Step 1: `git remote set-url origin https://www.github.com/{your-username}/covid-dashboard.git` (be sure to change your username and remove the curly braces)
-5. Run `git push origin main` to push the local repo to remote. You should now see this same code in your personal `covid-dashboard` repo.
+4. Then, connect this cloned repo to your new personal repo made in Step 1: `git remote set-url origin https://www.github.com/{your-username}/crypto-dashboard.git` (be sure to change your username and remove the curly braces)
+5. Run `git push origin main` to push the local repo to remote. You should now see this same code in your personal `crypto-dashboard` repo.
 
 ## Deploy to Render
 1. Go to https://render.com/ and create a new account free account. 
