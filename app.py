@@ -12,8 +12,6 @@ from dash.dependencies import Input, Output
 
 import pandas as pd
 
-
-
 def data_load():
     df_btc = dft.geckoHistorical('bitcoin').reset_index()[['date','price']]
     df_eth = dft.geckoHistorical('ethereum').reset_index()[['date','price']]
