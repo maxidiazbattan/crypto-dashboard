@@ -4,7 +4,8 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 
-import defi.defi_tools as dft
+import yfinance as yf
+# import defi.defi_tools as dft
 
 import plotly.graph_objs as go
 import plotly.express as px
@@ -12,18 +13,34 @@ from dash.dependencies import Input, Output
 
 import pandas as pd
 
-def data_load():
-    df_btc = dft.geckoHistorical('bitcoin').reset_index()[['date','price']]
-    df_eth = dft.geckoHistorical('ethereum').reset_index()[['date','price']]
-    df_bnb = dft.geckoHistorical('binancecoin').reset_index()[['date','price']]
+# def data_load():
+#     df_btc = dft.geckoHistorical('bitcoin').reset_index()[['date','price']]
+#     df_eth = dft.geckoHistorical('ethereum').reset_index()[['date','price']]
+#     df_bnb = dft.geckoHistorical('binancecoin').reset_index()[['date','price']]
 
-    df_btc = df_btc[df_btc['date'] > '2022-01-01']
-    df_eth = df_eth[df_eth['date'] > '2022-01-01']
-    df_bnb = df_bnb[df_bnb['date'] > '2022-01-01']
+#     df_btc = df_btc[df_btc['date'] > '2022-01-01']
+#     df_eth = df_eth[df_eth['date'] > '2022-01-01']
+#     df_bnb = df_bnb[df_bnb['date'] > '2022-01-01']
 
-    return df_btc, df_eth, df_bnb
+#     return df_btc, df_eth, df_bnb
 
-df_btc, df_eth, df_bnb = data_load()
+# df_btc, df_eth, df_bnb = data_load()
+
+def data_load(ticker, days='max'):
+    ticker = yf.Ticker(f"{ticker}-USD")
+    hist = ticker.history(period=days)
+    hist = hist.reset_index()[['Date','Close']]
+    hist.rename(columns={'Date':'date', 'Close':'price'}, inplace=True)
+
+    hist = hist[hist['date'] > '2022-01-01']
+
+    return hist
+
+df_btc = data_load('BTC')
+df_eth = data_load('ETH')
+df_bnb = data_load('BNB')
+
+
 
 
 #df = pd.read_csv('datasets/cards_tickers.csv', header=0, index_col=0)
