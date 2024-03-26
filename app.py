@@ -34,8 +34,8 @@ def data_load(ticker, days='max'):
     hist = ticker.history(period=days)
     hist = hist.reset_index()[['Date','Close']]
     hist.rename(columns={'Date':'date', 'Close':'price'}, inplace=True)
-
     hist = hist[hist['date'] > '2022-01-01']
+    
     return hist
 
 df_btc = data_load('BTC')
