@@ -1,16 +1,20 @@
-#Importing the libraries.
+# Importing the libraries.
+
+# dash & dash components
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 
-import yfinance as yf
-# import defi.defi_tools as dft
-
-import plotly.graph_objs as go
+# plotly
 import plotly.express as px
+import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 
+# data 
+import yfinance as yf
+
+# data handling 
 import pandas as pd
 
 # def data_load():
@@ -21,7 +25,6 @@ import pandas as pd
 #     df_btc = df_btc[df_btc['date'] > '2022-01-01']
 #     df_eth = df_eth[df_eth['date'] > '2022-01-01']
 #     df_bnb = df_bnb[df_bnb['date'] > '2022-01-01']
-
 #     return df_btc, df_eth, df_bnb
 
 # df_btc, df_eth, df_bnb = data_load()
@@ -33,19 +36,14 @@ def data_load(ticker, days='max'):
     hist.rename(columns={'Date':'date', 'Close':'price'}, inplace=True)
 
     hist = hist[hist['date'] > '2022-01-01']
-
     return hist
 
 df_btc = data_load('BTC')
 df_eth = data_load('ETH')
 df_bnb = data_load('BNB')
 
-
-
-
 #df = pd.read_csv('datasets/cards_tickers.csv', header=0, index_col=0)
 #df = df.reset_index()
-
 
 assets={'BTC-USD':'BTC-USD','ETH-USD':'ETH-USD','BNB-USD':'BNB-USD'}
 periods={'1mo':'1mo','3mo':'3mo','6mo':'6mo','1y':'1y'}
@@ -187,9 +185,7 @@ dcc.Interval(id='update', n_intervals=0, interval=1000*6)
 
 ], fluid=True)
 
-
-
-# Indicator Graph 1 -----------------------------------------------------------
+# indicator graph 1 -----------------------------------------------------------
 @app.callback(
     Output('indicator-graph-1', 'figure'),
     Input('update', 'n_intervals')
@@ -218,7 +214,7 @@ def update_graph(timer):
 
     return fig1
 
-# Indicator Graph 2 -----------------------------------------------------------
+# indicator graph 2 -----------------------------------------------------------
 @app.callback(
     Output('indicator-graph-2', 'figure'),
     Input('update', 'n_intervals')
@@ -230,8 +226,6 @@ def update_graph(timer):
 
     previous_value = df_eth.iloc[-2]['price']
     last_value = df_eth.iloc[-1]['price']
-
-
 
     fig2 = go.Figure(go.Indicator(
         mode="delta",
@@ -249,7 +243,7 @@ def update_graph(timer):
 
     return fig2
 
-# Indicator Graph 3 -----------------------------------------------------------
+# indicator graph 3 -----------------------------------------------------------
 @app.callback(
     Output('indicator-graph-3', 'figure'),
     Input('update', 'n_intervals')
@@ -258,11 +252,9 @@ def update_graph(timer):
     
     #day_start = df[df['Date'] == df['Date'].min()]['price'].values[0]
     #day_end = df[df['Date'] == df['Date'].max()]['price'].values[0]
-
     
     previous_value = df_bnb.iloc[-2]['price']
     last_value = df_bnb.iloc[-1]['price']
-
 
     fig3 = go.Figure(go.Indicator(
         mode="delta",
@@ -273,7 +265,6 @@ def update_graph(timer):
                        paper_bgcolor='rgba(0,0,0,0)',
                        plot_bgcolor='rgba(0,0,0,0)')
 
-
     if last_value >= previous_value:
         fig3.update_traces(delta_increasing_color='green')
     elif last_value < previous_value:
@@ -281,8 +272,7 @@ def update_graph(timer):
 
     return fig3
 
-        
-# Line Graph 1 ---------------------------------------------------------------
+# line graph 1 ---------------------------------------------------------------
 @app.callback(
     Output('daily-line-1', 'figure'),
     Input('update', 'n_intervals')
@@ -317,7 +307,7 @@ def update_graph(timer):
         return fig4.update_traces(fill='tozeroy',
                              line={'color': 'red'})
 
-# # Line Graph 2---------------------------------------------------------------
+# # line graph 2---------------------------------------------------------------
 @app.callback(
     Output('daily-line-2', 'figure'),
     Input('update', 'n_intervals')
@@ -349,7 +339,7 @@ def update_graph(timer):
         return fig5.update_traces(fill='tozeroy',
                              line={'color': 'red'})
         
-# Line Graph 3 ---------------------------------------------------------------
+# line graph 3 ---------------------------------------------------------------
 @app.callback(
     Output('daily-line-3', 'figure'),
     Input('update', 'n_intervals')
@@ -381,7 +371,7 @@ def update_graph(timer):
         return fig6.update_traces(fill='tozeroy',
                              line={'color': 'red'})
 
-# Candlestick ---------------------------------------------------------------
+# candlestick graph -----------------------------------------------------------
 
 @app.callback(
     Output('candlestick','figure'),
@@ -403,7 +393,6 @@ def build_graph(ticker, periods):
     else:
         df_mkt=pd.read_csv('datasets/periods_1y.csv', header=[0,1], index_col=0)
 
-
     fig7 = go.Figure(data=[go.Candlestick(x=df_mkt.index,
                     open=df_mkt['Open'][ticker], high=df_mkt['High'][ticker],
                     low=df_mkt['Low'][ticker], close=df_mkt['Close'][ticker])
@@ -416,7 +405,6 @@ def build_graph(ticker, periods):
                        plot_bgcolor='rgba(0,0,0,0)')
     
     return fig7  
-
 
 if __name__ =='__main__':
     app.run_server(host='127.0.0.1',port=8500, use_reloader=False)
